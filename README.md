@@ -1,12 +1,7 @@
 # ffmpeg-nvenc
 
-nvidiaのGPUを使って，h.264，h.265形式のエンコードを可能にしたffmpegの
-Dockerfileです．
-
+* nvidiaのGPUを使ったh.264，h.265形式のエンコードを可能にしたffmpegのDockerfileです．
 * nvidia-docker2をインストールしておく
-
-nvidia-docker2をインストールしておく
-
 
 # Dockerイメージのビルド
 
@@ -39,3 +34,4 @@ vcodecオプションを変更すると，コーデックを変更できます�
 | CPU       | H.264 | libx265    |
 | GPU       | H.265 | hevc_nvenc |
 | GPU       | H.264 | h264_nvenc |
+
