@@ -1,7 +1,17 @@
 # ffmpeg-nvenc
 
-* nvidiaのGPUを使ったh.264，h.265形式のエンコードを可能にしたffmpegのDockerfileです．
-* nvidia-docker2をインストールしておく
+* nvidiaのGPUを使ったh.264，h.265形式のエンコードを可能にしたffmpegのDockerfileです
+* Dockerホストに，docker-ce，nvidia-docker2がインストールされているこ
+  とが実行条件です
+
+# 準備
+
+Dockerホストは以下の条件を満たしている必要があります．
+
+* Linux OSがインストールされていること
+    * AWS g3s.xlarge，ubuntu18.04で動作確認しています
+* nvidia社のGPUが搭載されていること
+* docker-ce，nvidia-docker2がインストールされていること
 
 # Dockerイメージのビルド
 
