@@ -66,7 +66,7 @@ RUN set -xe && \
 
 WORKDIR /usr/local/ffmpeg_sources
 RUN set -xe && \
-    hg clone https://bitbucket.org/multicoreware/x265 \
+    git clone https://github.com/videolan/x265 \
         /usr/local/ffmpeg_sources/x265 && \
     cd /usr/local/ffmpeg_sources/x265/build/linux && \
     cmake -G "Unix Makefiles" -DENABLE_SHARED=off ../../source && \
