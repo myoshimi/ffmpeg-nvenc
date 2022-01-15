@@ -7,6 +7,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES video,compute,utility
 ARG NASM_VER="2.14"
 ARG YASM_VER="1.3.0"
 ARG LAME_VER="3.100"
+ARG NVCODECSDK_VER="9.0"
 ARG FFMPEG_VER="4.1.1"
 
 # Install required Packages
@@ -122,12 +123,12 @@ RUN set -xe && \
     make -j$(nproc) && \
     make install
 
-# nvidias codec API インストール
+# NVIDIA codec API インストール
 
 WORKDIR /usr/local/ffmpeg_sources
 RUN set -xe && \
     git -C nv-codec-headers pull 2> /dev/null || \
-        git clone https://github.com/FFmpeg/nv-codec-headers && \
+        git clone https://github.com/FFmpeg/nv-codec-headers -b sdk/${NVCODECSDK_VER}  && \
     cd nv-codec-headers && \
     make -j$(nproc) && \
     make install
